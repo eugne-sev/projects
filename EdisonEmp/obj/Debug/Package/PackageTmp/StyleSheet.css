@@ -1,0 +1,35 @@
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 800px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+#divHeadMem {
+    background-color: #c3e3e0;
+    height: 75px;
+    padding: 5px;
+}
+
+#divHeadInp {
+    background-color: #aaa;
+    height: 75px;
+    padding: 5px;
+}
+
+#divLeftGrid {
+    height: 400px;
+    width: 350px;
+    float: left;
+    background: #ccc;  
+    padding: 20px;
+}
+
+#divRightGrid {
+    height: 400px;
+    width: 350px;
+    float: left;
+    background: #eee;
+    padding: 20px;
+}
+

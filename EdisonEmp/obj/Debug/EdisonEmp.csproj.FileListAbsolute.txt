@@ -1,0 +1,4 @@
+D:\VS2010\Tests\EdisonApp\EdisonEmp\bin\EdisonEmp.dll
+D:\VS2010\Tests\EdisonApp\EdisonEmp\bin\EdisonEmp.pdb
+D:\VS2010\Tests\EdisonApp\EdisonEmp\obj\Debug\EdisonEmp.dll
+D:\VS2010\Tests\EdisonApp\EdisonEmp\obj\Debug\EdisonEmp.pdb
