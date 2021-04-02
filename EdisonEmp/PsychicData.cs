@@ -9,7 +9,7 @@ namespace EdisonEmp
     {
         public static List<PsychicClass> CreateList()
         {
-            string[] names = {"Алесандр", "Алексей", "Борис", "Василиса", "Георгий", "Дмитрий", "Евгений", "Егор", "Павел", "Роман"};
+            string[] names = {"Александр", "Алексей", "Борис", "Василиса", "Георгий", "Дмитрий", "Евгений", "Егор", "Павел", "Роман"};
             List<PsychicClass> list = new List<PsychicClass>();
             for (int i = 0; i < names.Length; i++)
             {
@@ -23,6 +23,7 @@ namespace EdisonEmp
             foreach (PsychicClass p in list)
             {
                 p.Value = 0;
+                p.Answers.Clear();
             }
         }
 
@@ -35,7 +36,11 @@ namespace EdisonEmp
             foreach (PsychicClass p in list)
             {
                 if (p.Value == 0)
+                {
                     p.Value = rnd.Next(10, 99);
+                    LogClass a = new LogClass(p.Value);
+                    p.Answers.Add(a);
+                }
             }
             HttpContext.Current.Session["PsychicClass"] = list;
             return list;
@@ -58,5 +63,23 @@ namespace EdisonEmp
             return list;
         }
 
+        public static PsychicClass PsychicItem(int number)
+        {
+            List<PsychicClass> list = HttpContext.Current.Session["PsychicClass"] as List<PsychicClass>;
+            PsychicClass psychic = null;
+            for (int i = 0; i < list.Count; i++)
+            {
+                psychic = list[i];
+                if (psychic.Number == number)
+                    break;
+            }
+            return psychic;
+        }
+
+        public static List<LogClass> PsychicAnswers(int number)
+        {
+            PsychicClass psychic = PsychicItem(number);
+            return psychic.Answers;
+        }
     }
 }

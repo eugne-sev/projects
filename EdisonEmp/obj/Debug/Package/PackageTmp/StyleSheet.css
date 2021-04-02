@@ -1,8 +1,16 @@
 ﻿body {
     font-family: Arial, Helvetica, sans-serif;
-    width: 800px;
+    width: 950px;
     text-align: center;
     margin: 20px auto;
+}
+
+#divUserLog {
+    width: 150px;
+    background-color: #f1f1f1;
+    float: left;
+    padding: 10px;
+    height: 520px;
 }
 
 #divHeadMem {

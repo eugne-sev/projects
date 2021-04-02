@@ -25,15 +25,21 @@ namespace EdisonEmp
         /// </summary>
         public int Guessed { get; set; }
 
+        /// <summary>
+        /// Ответы
+        /// </summary>
+        public List<LogClass> Answers;
+
         public PsychicClass()
         {
-            
+            Answers = new List<LogClass>();
         }
 
         public PsychicClass(int number, string name)
         {
             Number = number;
             Name = name;
+            Answers = new List<LogClass>();
         }
     }
 }

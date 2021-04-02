@@ -26,7 +26,10 @@ namespace EdisonEmp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                LogData.Clear();
+            }
         }
 
         protected void btnMake_Click(object sender, EventArgs e)
@@ -39,12 +42,31 @@ namespace EdisonEmp
 
         protected void btnInput_Click(object sender, EventArgs e)
         {
-            Session["InputValue"] = Convert.ToInt32(tbNumber.Text);
+            int value = Convert.ToInt32(tbNumber.Text);
+            Session["InputValue"] = value;
+            LogData.Add(value);
             gvPsychicStatus.DataBind();
             divHeadInp.Visible = false;
             divHeadMem.Visible = true;
             tbNumber.Text = String.Empty;
             Session["InputValue"] = 0;
+            gvLogValues.DataBind();
+        }
+
+        protected void gvPsychicStatus_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "History")
+            {
+                string argument = e.CommandArgument.ToString();
+                string url = "PsychicHistory.aspx?NUM=" + argument; 
+                string s = "OpenCenterScreen('" + url + "', 300, 500);";
+                const String csname = "PsychicHistory";
+                Type cstype = this.GetType();
+                ClientScriptManager cs = Page.ClientScript;
+                if (!cs.IsStartupScriptRegistered(cstype, csname))
+                    ClientScript.RegisterStartupScript(this.GetType(), csname, s, true);
+
+            }
         }
     }
 }

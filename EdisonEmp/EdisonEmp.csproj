@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PsychicForm.aspx" />
+    <Content Include="PsychicHistory.aspx" />
     <Content Include="StyleSheet.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -62,6 +63,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogClass.cs" />
+    <Compile Include="LogData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsychicClass.cs" />
     <Compile Include="PsychicData.cs" />
@@ -71,6 +74,13 @@
     </Compile>
     <Compile Include="PsychicForm.aspx.designer.cs">
       <DependentUpon>PsychicForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PsychicHistory.aspx.cs">
+      <DependentUpon>PsychicHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PsychicHistory.aspx.designer.cs">
+      <DependentUpon>PsychicHistory.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

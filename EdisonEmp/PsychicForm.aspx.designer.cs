@@ -22,6 +22,24 @@ namespace EdisonEmp {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// gvLogValues control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvLogValues;
+        
+        /// <summary>
+        /// ObjectDataSourceUserLog control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceUserLog;
+        
+        /// <summary>
         /// divHeadMem control.
         /// </summary>
         /// <remarks>
@@ -74,6 +92,15 @@ namespace EdisonEmp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator cmpValidNumber;
+        
+        /// <summary>
+        /// cmpDigitValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cmpDigitValue;
         
         /// <summary>
         /// btnInput control.
