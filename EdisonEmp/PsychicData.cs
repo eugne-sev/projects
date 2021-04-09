@@ -27,7 +27,22 @@ namespace EdisonEmp
             }
         }
 
-        public static List<PsychicClass> BuildResult(ref Object dataList)
+        public static List<PsychicClass> ShowResult(ref Object dataList)
+        {
+            List<PsychicClass> list = dataList as List<PsychicClass>;
+            if (list == null)
+                list = CreateList();
+            int countAnswer = 0;
+            foreach (PsychicClass psychicClass in list)
+            {
+                countAnswer += psychicClass.Answers.Count;
+            }
+            if (countAnswer == 0)
+                return BuildResult(dataList);
+            return list;
+        }
+
+        public static List<PsychicClass> BuildResult(Object dataList)
         {
             List<PsychicClass> list = dataList as List<PsychicClass>;
             if (list == null)
@@ -35,7 +50,7 @@ namespace EdisonEmp
             Random rnd = new Random();
             foreach (PsychicClass p in list)
             {
-                if (p.Value == 0)
+                //if (p.Value == 0)
                 {
                     p.Value = rnd.Next(10, 99);
                     LogClass a = new LogClass(p.Value);

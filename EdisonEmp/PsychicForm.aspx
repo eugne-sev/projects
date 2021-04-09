@@ -24,7 +24,8 @@
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
                     <asp:BoundField DataField="Value" HeaderText="Загадано" />
-                    <asp:BoundField DataField="DateLog" HeaderText="Дата" />
+                    <asp:BoundField DataField="DateLog" HeaderText="Дата" 
+                        DataFormatString="{0:dd/MM/yyyy hh:mm:ss}" />
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -93,13 +94,16 @@
                     <asp:BoundField DataField="Number" HeaderText="№ п/п" SortExpression="Number">
                     <ItemStyle HorizontalAlign="Right" />
                     </asp:BoundField>
+                    <%-- 
                     <asp:BoundField DataField="Name" HeaderText="Псевдоним" SortExpression="Name">
                     <ItemStyle HorizontalAlign="Left" />
                     </asp:BoundField>
+                    --%>
                     <asp:TemplateField HeaderText="Псевдоним">
                         <ItemTemplate>
                             <asp:LinkButton runat="server" ID="lbName" CommandName='History' Text='<%# Eval("Name") %>' CommandArgument='<%# Eval("Number") %>'/>
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Left" />
                     </asp:TemplateField>
                     <asp:BoundField DataField="Guessed" HeaderText="Угадано" SortExpression="Guessed">
                     <ItemStyle HorizontalAlign="Right" />
@@ -121,7 +125,7 @@
         
     </div>
     <asp:ObjectDataSource ID="ObjectDataSourceGuess" runat="server" 
-        SelectMethod="BuildResult" TypeName="EdisonEmp.PsychicData">
+        SelectMethod="ShowResult" TypeName="EdisonEmp.PsychicData">
         <SelectParameters>
             <asp:SessionParameter Name="dataList" SessionField="PsychicClass" Type="Object"/>
         </SelectParameters>

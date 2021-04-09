@@ -19,7 +19,7 @@
             <Columns>
                 <asp:BoundField DataField="Value" HeaderText="Ответ" SortExpression="Value" />
                 <asp:BoundField DataField="DateLog" HeaderText="Дата" 
-                    SortExpression="DateLog" />
+                    SortExpression="DateLog" DataFormatString="{0:dd/MM/yyyy hh:mm:ss}" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

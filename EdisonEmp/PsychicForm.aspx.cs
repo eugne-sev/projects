@@ -29,15 +29,17 @@ namespace EdisonEmp
             if (!IsPostBack)
             {
                 LogData.Clear();
+                PsychicData.Clear(PsychicList);
             }
         }
 
         protected void btnMake_Click(object sender, EventArgs e)
         {
-            PsychicData.Clear(PsychicList);
             divGuess.Visible = true;
             divHeadInp.Visible = true;
             divHeadMem.Visible = false;
+            List<PsychicClass> psychic = PsychicList; 
+            PsychicData.BuildResult(psychic);
         }
 
         protected void btnInput_Click(object sender, EventArgs e)
